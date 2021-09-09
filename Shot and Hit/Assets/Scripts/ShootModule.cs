@@ -19,8 +19,6 @@ public class ShootModule : MonoBehaviour
     private void OnCollisionEnter(Collision collisionInfo)
     {
         Debug.Log("sa");
-        
-
 
         TargetModule targetModule = GetComponent<TargetModule>();
 
