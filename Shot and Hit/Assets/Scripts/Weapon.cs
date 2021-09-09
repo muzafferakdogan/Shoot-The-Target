@@ -13,13 +13,11 @@ public class Weapon : MonoBehaviour
         {
             CreateBullet();
         }
-        
     }
     
     void CreateBullet()
     {
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
-
     }
 
 
