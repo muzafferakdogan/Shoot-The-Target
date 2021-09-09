@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 1201639387001247954}
   - component: {fileID: 6345181259557174988}
   - component: {fileID: 4300588189750335683}
-  - component: {fileID: 7172130747628960969}
   - component: {fileID: 1938425415548281146}
-  - component: {fileID: 774704545505757896}
   - component: {fileID: 6292775483677988823}
+  - component: {fileID: 7918663884382381214}
   m_Layer: 0
   m_Name: Bullets
   m_TagString: Untagged
@@ -29,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7771847992379521747}
-  m_LocalRotation: {x: 0.16421293, y: 0.68994474, z: 0.6853323, w: -0.16531812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2942141, y: 2.528307, z: -39.357647}
   m_LocalScale: {x: 0.04494, y: 0.04494, z: 0.04494}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6345181259557174988
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7172130747628960969
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7771847992379521747}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1938425415548281146
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,20 +100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!136 &774704545505757896
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7771847992379521747}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2.0000005
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6292775483677988823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,4 +112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e03929a0d1eeec45a09c24420419adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 5
+--- !u!136 &7918663884382381214
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771847992379521747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

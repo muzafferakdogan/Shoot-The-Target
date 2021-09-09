@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private float damage = 20f;
     [SerializeField] private float range = 100f;
 
     [SerializeField]private Transform FirePoint;
@@ -14,13 +13,16 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            CreateBullet();
         }
+        
     }
     
-    void Shoot()
+    void CreateBullet()
     {
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
 
     }
+
+
 }

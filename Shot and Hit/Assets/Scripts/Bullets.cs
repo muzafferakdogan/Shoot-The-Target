@@ -19,6 +19,6 @@ public class Bullets : MonoBehaviour
 
     private void BulletMoove()
     {
-        transform.position += transform.right * speed * Time.deltaTime;
+        transform.position += transform.up * speed * Time.deltaTime;
     }
 }
