@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private float range = 100f;
-
     [SerializeField]private Transform FirePoint;
     [SerializeField]private GameObject BulletPrefab;
 
