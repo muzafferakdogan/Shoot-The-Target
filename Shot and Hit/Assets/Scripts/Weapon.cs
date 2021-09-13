@@ -20,5 +20,4 @@ public class Weapon : MonoBehaviour
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
     }
 
-
 }
