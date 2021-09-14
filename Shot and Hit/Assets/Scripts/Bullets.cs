@@ -24,7 +24,7 @@ public class Bullets : MonoBehaviour
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
-       TargetModule  targetModule = collisionInfo.other.gameObject.GetComponent<TargetModule>();
+        TargetModule  targetModule = collisionInfo.other.gameObject.GetComponent<TargetModule>();
         DealDamage(targetModule);
         Destroy(gameObject);
     }
