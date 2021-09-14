@@ -6,27 +6,15 @@ public class Bullets : MonoBehaviour
 {
     [SerializeField] private float speed = 20f;
     [SerializeField] private float damage = 20f;
-    private TargetModule targetModule;
-
-    void Start()
-    {
-        targetModule = GetComponent<TargetModule>();
-    }
 
     void Update()
     {
         BulletMoove();
     }
 
-    public void TakeDamage()
+    public void DealDamage(TargetModule tm)
     {
-        Debug.Log(targetModule.health);
-        targetModule.health -= damage;
-        Debug.Log(targetModule.health);
-        if (targetModule.health <= 0f)
-        {
-            Die();
-        }
+        tm.TakeDamage(damage);
     }
 
     void Die()
@@ -36,9 +24,9 @@ public class Bullets : MonoBehaviour
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
-        targetModule = GetComponent<TargetModule>();
-        Destroy(this.gameObject);
-        TakeDamage();
+       TargetModule  targetModule = collisionInfo.other.gameObject.GetComponent<TargetModule>();
+        DealDamage(targetModule);
+        Destroy(gameObject);
     }
 
     private void BulletMoove()
