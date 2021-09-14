@@ -12,7 +12,7 @@ public class Bullets : MonoBehaviour
         BulletMoove();
     }
 
-    public void DealDamage(TargetModule tm)
+    public void DealDamage(ICanBeDamaged tm)
     {
         tm.TakeDamage(damage);
     }
@@ -24,9 +24,10 @@ public class Bullets : MonoBehaviour
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
-        TargetModule  targetModule = collisionInfo.other.gameObject.GetComponent<TargetModule>();
-        DealDamage(targetModule);
+        if (!collisionInfo.collider.gameObject.TryGetComponent<ICanBeDamaged>(out ICanBeDamaged damageable)) return;
+        DealDamage(damageable);
         Destroy(gameObject);
+        
     }
 
     private void BulletMoove()

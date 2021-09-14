@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetModule : MonoBehaviour
+public class TargetModule : MonoBehaviour,  ICanBeDamaged
 {
-    [SerializeField]public float maxHealth = 100f;
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private List<DamageTransfer> damageTransfers = new List<DamageTransfer>();
     private float curHealth;
 
     public bool IsDead { get; private set; } = false;
@@ -13,6 +14,15 @@ public class TargetModule : MonoBehaviour
     private void Start()
     {
         ResetHp();
+        SetupDamageTransfers();
+    }
+
+    private void SetupDamageTransfers()
+    {
+        foreach (DamageTransfer transferUnit in damageTransfers)
+        {
+            transferUnit.SetupDamageTransferUnit(this);
+        }
     }
 
     private void ResetHp()
@@ -20,19 +30,20 @@ public class TargetModule : MonoBehaviour
         curHealth = maxHealth;
     }
 
-    public void TakeDamage(float dmg)
+
+    private void Die()
     {
-        curHealth -= dmg;
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        curHealth -= damage;
         if (curHealth <= 0 && !IsDead)
         {
             IsDead = true;
             curHealth = 0;
             Die();
         }
-    }
-
-    private void Die()
-    {
-        Destroy(gameObject);
     }
 }
