@@ -21,6 +21,7 @@ public class Bullets : MonoBehaviour
     {
         Destroy(gameObject);
     }
+       
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
